@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.1">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12447</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-04-23.19:11:17.099</IntrospectionTimestamp>
+      <IntrospectionStateNumber>718</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12155</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="match_match_id_seq">
+      <ObjectId>16425</ObjectId>
+      <StateNumber>716</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="10" parent="3" name="player_id_seq">
+      <ObjectId>16417</ObjectId>
+      <StateNumber>715</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="11" parent="3" name="match">
+      <ObjectId>16427</ObjectId>
+      <StateNumber>716</StateNumber>
+    </table>
+    <table id="12" parent="3" name="player">
+      <ObjectId>16419</ObjectId>
+      <StateNumber>716</StateNumber>
+    </table>
+    <view id="13" parent="3" name="numofmatches">
+      <ObjectId>16443</ObjectId>
+      <StateNumber>717</StateNumber>
+    </view>
+    <view id="14" parent="3" name="numofwins">
+      <ObjectId>16447</ObjectId>
+      <StateNumber>718</StateNumber>
+    </view>
+    <column id="15" parent="11" name="match_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>716</StateNumber>
+      <SequenceName>match_match_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;match_match_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="16" parent="11" name="player1">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>716</StateNumber>
+    </column>
+    <column id="17" parent="11" name="player2">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>716</StateNumber>
+    </column>
+    <column id="18" parent="11" name="winner">
+      <Position>4</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>716</StateNumber>
+    </column>
+    <index id="19" parent="11" name="match_pkey">
+      <ObjectId>16431</ObjectId>
+      <ColNames>match_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="11" name="match_pkey">
+      <ObjectId>16432</ObjectId>
+      <ColNames>match_id</ColNames>
+      <UnderlyingIndexName>match_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="21" parent="11" name="match_player1_fkey">
+      <ObjectId>16433</ObjectId>
+      <ColNames>player1</ColNames>
+      <RefTableName>player</RefTableName>
+      <RefKeyName>player_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="22" parent="11" name="match_player2_fkey">
+      <ObjectId>16438</ObjectId>
+      <ColNames>player2</ColNames>
+      <RefTableName>player</RefTableName>
+      <RefKeyName>player_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="23" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>715</StateNumber>
+      <SequenceName>player_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;player_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="24" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>715</StateNumber>
+    </column>
+    <index id="25" parent="12" name="player_pkey">
+      <ObjectId>16423</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="26" parent="12" name="player_pkey">
+      <ObjectId>16424</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>player_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>717</StateNumber>
+    </column>
+    <column id="28" parent="13" name="num">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>717</StateNumber>
+    </column>
+    <column id="29" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>718</StateNumber>
+    </column>
+    <column id="30" parent="14" name="num">
+      <Position>2</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>718</StateNumber>
+    </column>
+  </database-model>
+</dataSource>
